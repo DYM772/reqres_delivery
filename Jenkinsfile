@@ -12,6 +12,12 @@ pipeline {
     }
  
     stages {
+        stage('Check Environment Variables') {
+            steps {
+                sh 'printenv'
+            }
+        }
+        
         stage('Clone Repository') {
             steps {
                 checkout scm
